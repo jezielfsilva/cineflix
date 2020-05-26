@@ -4,9 +4,11 @@ import styled from 'styled-components';
 const ButtonsPage = styled.button`
     width: ${props => props.width};
     height: ${props => props.height};
-    border-radius: 0.25em;
+    border-radius: 0.1em;
     border: 0;
-    font-size: 1.1em;
+    font-size: 2em;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
     color: ${props => props.color};
     background: ${props => props.background};
 `;
