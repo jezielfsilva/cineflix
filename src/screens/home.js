@@ -4,9 +4,9 @@ import Button from '../components/Button';
 
 const Page = styled.div`
     width: 100%;
-    min-height: 234vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 `;
 
 const Header = styled.header`
@@ -62,20 +62,26 @@ const MainPhoto = styled.div`
 
 const ContainerFilms = styled.div`
     width: 100%;
-    height: 90vh;
-    
+    height: 135vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 
-const TextFilms = styled.h2`
-    font-size: 3em;
+const TitleFilms = styled.h2`
+    font-size: 2.7em;
     letter-spacing: -0.015em;
     color: #364859;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25%;
+    height: 12%;
 `;
 
 const ContainerCategory = styled.div`
-    width: 30vw;
-    height: 67vh;
+    width: 28vw;
+    height: 98vh;
 `;
 
 const Score = styled.div`
@@ -90,8 +96,8 @@ const Score = styled.div`
     justify-content: center;
     z-index: 1;
     position: absolute;
-    top: 23.6em;
-    left: 9.46em;
+    top: 22.5em;
+    left: 10em;
 `;
 
 const ScoreTwo = styled.div`
@@ -106,19 +112,18 @@ const ScoreTwo = styled.div`
     justify-content: center;
     z-index: 1;
     position: absolute;
-    top: 23.6em;
-    left: 21.4em;
+    top: 22.5em;
+    left: 21.6em;
 `;
 
 const EmptyContainer = styled.span`
     width: 30vw;
-    height: 67vh;
-    background: #777777;
+    height: 98vh;
 `;
 
 const ContainerItems = styled.div`
     width: 100%;
-    height: 69vh;
+    height: 100vh;
     display: flex;
     justify-content: space-around;
 `;
@@ -127,6 +132,7 @@ const ContPhoto = styled.div`
     width: 28vw;
     height: 66vh;
     background: #75A9A4;
+    border-radius: 0.3125em;
 `;
 
 const Photo = styled.div`
@@ -135,6 +141,7 @@ const Photo = styled.div`
     background-position: 50% 75%;
     width: 28vw;
     height: 61vh;
+    border-radius: 0.3125em 0.3125em 0 0;
 `;
 
 const PhotoTwo = styled.div`
@@ -143,31 +150,80 @@ const PhotoTwo = styled.div`
     background-position: 50% 64%;
     width: 28vw;
     height: 61vh;
+    border-radius: 0.3125em 0.3125em 0 0;
 `;
 
 const TextPhoto = styled.p`
     font-size: 1.125em;
-    line-height: 0.1em;
+    line-height: 1.7em;
     letter-spacing: -0.015em;
     color: #FFFFFF;
+    width: 27vw;
+    display: flex;
+    justify-content: center;
 `;
 
 const TitlePhoto = styled.h2`
-    font-size: 2em;
+    font-size: 1.7em;
     letter-spacing: -0.015em;
     color: #364859;
     text-align: left;
+    height: 2.4em;
+    display: flex;
+    align-items: center;
 `;
 
-const TextCategory= styled.p`
-    font-size: 1.4em;
+const TextCategory = styled.p`
+    font-size: 1.1em;
     letter-spacing: -0.015em;
     color: #94A2AC;
     text-align: left;
-    width: 25vw;
+    width: 24vw;
+`;
+
+const TextCategoryTwo = styled.p`
+    font-size: 1.1em;
+    letter-spacing: -0.015em;
+    color: #94A2AC;
+    text-align: left;
+    width: 18vw;
+`;
+
+const List = styled.ul`
+    position: absolute;
+    background: #FFFFFF;
+    list-style: none;
+    right: 8.7em;
+    top: 3.4em;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0.1em;
+    width: 7.2em;
+    height: 3.08em;
+    display: none;
+`;
+
+const ListItem = styled.li`
+    font-size: 0.98em;
+    color: #364859;
+    border-radius: 0.1em;
+
+    &:hover {
+        background: #ECECEC;
+        font-weight: 900;
+    }
 `;
 
 export default class Main extends React.Component {
+
+        constructor(props) {
+            super(props)
+            this.state = {
+                menOpen: false, 
+            }
+        }
+
     render () {
         return (
             <Page>
@@ -175,8 +231,14 @@ export default class Main extends React.Component {
                     <ContainerMn>
                         <MainText>CineFlix</MainText>
                         <ContButtons>
-                            <Button color="#364859" width="7.2em" height="1.4em">categorias</Button>
-                            <Button background="#C74350" width="7.2em" height="1.4em">adicionar filme</Button>
+                            <Button color="#364859" width="7.2em" height="1.4em">
+                                categorias
+                                <List>
+                                    <ListItem>Quero ver</ListItem>
+                                    <ListItem>Já vistos</ListItem>
+                                </List>
+                            </Button>
+                            <Button color="#364859" width="7.2em" height="1.4em">adicionar filme</Button>
                         </ContButtons>
                     </ContainerMn>
                 </Header>
@@ -186,7 +248,7 @@ export default class Main extends React.Component {
                         </MainPhoto>
                     </ContainerPhoto>
                     <ContainerFilms>
-                        <TextFilms>Minha lista:</TextFilms>
+                        <TitleFilms>Minha lista:</TitleFilms>
                         <ContainerItems>
                             <ContainerCategory>
                                 <Score>5.0</Score>
@@ -204,7 +266,7 @@ export default class Main extends React.Component {
                                     <TextPhoto>quero ver</TextPhoto>
                                 </ContPhoto>
                                 <TitlePhoto>Corra!</TitlePhoto>
-                                <TextCategory>Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.</TextCategory>
+                                <TextCategoryTwo>Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.</TextCategoryTwo>
                             </ContainerCategory>
                             <EmptyContainer></EmptyContainer>
                         </ContainerItems>

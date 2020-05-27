@@ -11,6 +11,11 @@ const ButtonsPage = styled.button`
     line-height: 1.5em;
     color: ${props => props.color};
     background: ${props => props.background};
+
+    &:hover {
+        background: #C74350;
+        color: #FFFFFF;
+    }
 `;
 
 const Button = (props) => {
