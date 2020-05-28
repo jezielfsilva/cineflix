@@ -22,6 +22,7 @@ const Button = (props) => {
     return (
         <ButtonsPage
             background={props.background || 'transparent'}
+            onClick={props.onClick}
             width={props.width}
             height={props.height}
             color={props.color || '#FFFFFF'}

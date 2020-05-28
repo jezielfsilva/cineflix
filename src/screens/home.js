@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../components/Button';
+import Input from '../components/Input';
 
 const Page = styled.div`
     width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -190,18 +192,16 @@ const TextCategoryTwo = styled.p`
 `;
 
 const List = styled.ul`
-    position: absolute;
+    position: relative;
     background: #FFFFFF;
     list-style: none;
-    right: 8.7em;
-    top: 3.4em;
     border: 1px solid rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.1em;
     width: 7.2em;
     height: 3.08em;
-    display: none;
+    display: inline-block;
 `;
 
 const ListItem = styled.li`
@@ -215,14 +215,115 @@ const ListItem = styled.li`
     }
 `;
 
+const Overlay = styled.div`
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    background: #00000060;
+    z-index: 2;
+`;
+
+const ContainerModal = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    min-height: 70vh;
+    background: #FFFFFF;
+    border-radius: 0.1em;
+`;
+
+const ContainerClacket = styled.div`
+    width: 27%;
+    height: 67vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const ContAddFilms = styled.div`
+    width: 27%;
+    height: 67vh;
+    display: flex;
+    flex-direction: column;
+`;
+
 export default class Main extends React.Component {
 
         constructor(props) {
             super(props)
             this.state = {
-                menOpen: false, 
+                menOpen: false,
+                modOpen: false, 
             }
         }
+
+        openModal = (event) => {
+            event.preventDefault()
+            this.setState({
+                modOpen: true,
+            })
+        }
+
+        handleButtonClick = () => {
+            this.setState(state => {
+                return {
+                    menOpen: !state.menOpen,
+                };
+            });
+        }
+
+        handleClickOutside = event => {
+            if (this.ContButtons.current && !this.ContButtons.current.contains(event.target)) {
+                this.setState({
+                    menOpen: false,
+                });
+            };
+        };
+
+        ContButtons = React.createRef();
+            state = {
+                menOpen: false,
+            };
+
+        componentDidMount() {
+            document.addEventListener("mousedown", this.handleClickOutside);
+        }
+        componentWillUnmount() {
+            document.removeEventListener("mousedown", this.handleClickOutside);
+        }
+        
+    renderModal = () => (
+        <Overlay>
+            <ContainerModal>
+                <ContainerClacket>
+                    <img src="https://pngimage.net/wp-content/uploads/2018/05/clacket-png-3-300x200.png"/>
+                </ContainerClacket>
+                <ContAddFilms>
+                    <div>
+                        <p>Adicionar novo filme:</p>
+                        <button onClick={() => this.setState({modOpen: false})}>X</button>
+                    </div>
+                    <input></input>
+                    <input></input>
+                    <input></input>
+                    <div>
+                        <input></input>
+                        <button>adicionar imagem</button>
+                    </div>
+                    <p>Nota:</p>
+                    <div></div>
+                    <div>
+                        <button>cancelar</button>
+                        <button>feito</button>
+                    </div>
+                </ContAddFilms>
+            </ContainerModal>
+        </Overlay>
+    )    
 
     render () {
         return (
@@ -230,15 +331,17 @@ export default class Main extends React.Component {
                 <Header>
                     <ContainerMn>
                         <MainText>CineFlix</MainText>
-                        <ContButtons>
-                            <Button color="#364859" width="7.2em" height="1.4em">
+                        <ContButtons ref={this.ContButtons}>
+                            <Button onClick={this.handleButtonClick} color="#364859" width="7.2em" height="1.4em">
                                 categorias
-                                <List>
-                                    <ListItem>Quero ver</ListItem>
-                                    <ListItem>Já vistos</ListItem>
-                                </List>
+                                {this.state.menOpen && (
+                                    <List>
+                                        <ListItem>Quero ver</ListItem>
+                                        <ListItem>Já vistos</ListItem>
+                                    </List>
+                                )}
                             </Button>
-                            <Button color="#364859" width="7.2em" height="1.4em">adicionar filme</Button>
+                            <Button onClick={this.openModal} color="#364859" width="7.2em" height="1.4em">adicionar filme</Button>
                         </ContButtons>
                     </ContainerMn>
                 </Header>
@@ -272,6 +375,7 @@ export default class Main extends React.Component {
                         </ContainerItems>
                     </ContainerFilms>
                 </MainPage>
+                {this.state.modOpen ? this.renderModal() : null}
             </Page>
         );
     }
