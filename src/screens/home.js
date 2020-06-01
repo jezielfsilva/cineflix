@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
 import Input from '../components/Input';
 
 const Page = styled.div`
@@ -39,6 +38,23 @@ const ContButtons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+`;
+
+const Button = styled.button`
+    width: 7.2em;
+    height: 1.4em;
+    border-radius: 0.1em;
+    border: 0;
+    font-size: 2em;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+    color: #364859;
+    background: #FFFFFF;
+
+    &:hover {
+        background: #C74350;
+        color: #FFFFFF;
+    }
 `;
 
 const MainPage = styled.div`
@@ -192,7 +208,9 @@ const TextCategoryTwo = styled.p`
 `;
 
 const List = styled.ul`
-    position: relative;
+    position: absolute;
+    top: 3.4em;
+    right: 8.7em;
     background: #FFFFFF;
     list-style: none;
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -205,7 +223,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-    font-size: 0.98em;
+    font-size: 0.7em;
     color: #364859;
     border-radius: 0.1em;
 
@@ -237,18 +255,116 @@ const ContainerModal = styled.div`
 `;
 
 const ContainerClacket = styled.div`
-    width: 27%;
-    height: 67vh;
+    width: 48%;
+    height: 65vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+`;
+
+const ClackPhoto = styled.img`
+    width: 80%;
 `;
 
 const ContAddFilms = styled.div`
-    width: 27%;
-    height: 67vh;
+    width: 48%;
+    height: 65vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+`;
+
+const BoxTextButton = styled.div`
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`;
+
+const TextAddFilm = styled.p`
+    color: #364859;
+    letter-spacing: -0.015em;
+    font-weight: 500;
+    font-size: 1.6em;
+`;
+
+const ButClose = styled.button`
+    width: 2vw;
+    height: 4vh;
+    letter-spacing: -0.015em;
+    color: rgba(54, 72, 89, 0.25);
+    background: #FFFFFF;
+    font-size: 1.9em;
+    font-weight: 600;
+    border-radius: 0.1em;
+    border: 0;
+`;
+
+const InpBut = styled.div`
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+`;
+
+const ButAddimg = styled.button`
+    width: 10.7vw;
+    height: 4.7vh;
+    background: #75A9A4;
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 0.2em;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+`;
+
+const TextNote = styled.p`
+    color: #364859;
+    letter-spacing: -0.015em;
+    font-size: 0.9em;
+`;
+
+const Boxstars = styled.div`
+    width: 100%;
+    height: 12vh;
+    background: blue;
+`;
+
+const FinButs = styled.div`
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+`;
+
+const Boxbut = styled.div`
+    width: 17vw;
+    height: 6vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`;
+
+const LastBut = styled.button`
+    width: 8.4em;
+    height: 2.7em;
+    border-radius: 0.2em;
+    border: 0;
+    font-size: 0.8em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+    color: #364859;
+    background: #FFFFFF;
+
+    &:hover {
+        background: #75A9A4;
+        color: #FFFFFF;
+    }
 `;
 
 export default class Main extends React.Component {
@@ -300,26 +416,28 @@ export default class Main extends React.Component {
         <Overlay>
             <ContainerModal>
                 <ContainerClacket>
-                    <img src="https://pngimage.net/wp-content/uploads/2018/05/clacket-png-3-300x200.png"/>
+                    <ClackPhoto src="https://lh3.googleusercontent.com/proxy/e2uz6fEr3NUXkPKDR_gTRuPSgIqwf4rEU0Sp5f_QAowP-IoHuACa-h3kmu2rENbwf7JnviNoi6bEwVCpOgwHC02u-aaeB7EJUFpBWDmBRwdBxgTo5g1n0GxqKCkgI31XOdcwNW3e57vvAku-JiJ23FbzMyZHLEDB-3J1aqB-rr639Q"/>
                 </ContainerClacket>
                 <ContAddFilms>
-                    <div>
-                        <p>Adicionar novo filme:</p>
-                        <button onClick={() => this.setState({modOpen: false})}>X</button>
-                    </div>
-                    <input></input>
-                    <input></input>
-                    <input></input>
-                    <div>
-                        <input></input>
-                        <button>adicionar imagem</button>
-                    </div>
-                    <p>Nota:</p>
-                    <div></div>
-                    <div>
-                        <button>cancelar</button>
-                        <button>feito</button>
-                    </div>
+                    <BoxTextButton>
+                        <TextAddFilm>Adicionar novo filme:</TextAddFilm>
+                        <ButClose onClick={() => this.setState({modOpen: false})}>X</ButClose>
+                    </BoxTextButton>
+                    <Input type="text" labelText="Nome:" width="23rem"/>
+                    <Input type="text" labelText="Descrição:" width="23rem"/>
+                    <Input type="text" labelText="Status:" width="23rem"/>
+                    <InpBut>
+                        <Input type="text" labelText="Imagem de exibição:" width="14rem"/>
+                        <ButAddimg>adicionar imagem</ButAddimg>
+                    </InpBut>
+                    <TextNote>Nota:</TextNote>
+                    <Boxstars></Boxstars>
+                    <FinButs>
+                        <Boxbut>
+                            <LastBut>cancelar</LastBut>
+                            <LastBut>feito</LastBut>
+                        </Boxbut>
+                    </FinButs>
                 </ContAddFilms>
             </ContainerModal>
         </Overlay>

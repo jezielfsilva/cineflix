@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const InputFrm = styled.input`
-    width: 20rem;
-    height: 3rem;
+    width: ${props => props.width};
+    height: 2rem;
     border-radius: 0.25em;
+    border: 0;
     background: #F4F6F8;
 `;
 
@@ -14,8 +15,7 @@ const Label = styled.label`
 
     p{
         color: #364859;
-        margin-left: 0.5rem;
-        font-size: 0.8125em;
+        font-size: 0.9em;
     }
 `;
 
@@ -23,7 +23,7 @@ export default function Input(props) {
     return (
         <Label>
             <p>{props.labelText}</p>
-            <InputFrm type={props.type}/>
+            <InputFrm type={props.type} width={props.width}/>
         </Label>
     );
 }
