@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input from '../components/Input';
+import StarWhi from '../assets/Star 1.png';
+import StarYel from '../assets/Star 2.png';
 
 const Page = styled.div`
     width: 100%;
@@ -330,7 +332,22 @@ const TextNote = styled.p`
 const Boxstars = styled.div`
     width: 100%;
     height: 12vh;
-    background: blue;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+`;
+
+const StarsCont = styled.div`
+    width: 56%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+`;
+
+const PhotoStars = styled.img`
+    width: 15%;
+    cursor: pointer;
 `;
 
 const FinButs = styled.div`
@@ -431,7 +448,15 @@ export default class Main extends React.Component {
                         <ButAddimg>adicionar imagem</ButAddimg>
                     </InpBut>
                     <TextNote>Nota:</TextNote>
-                    <Boxstars></Boxstars>
+                    <Boxstars>
+                        <StarsCont>
+                            <PhotoStars src={StarWhi || StarYel}/>
+                            <PhotoStars src={StarWhi || StarYel}/>
+                            <PhotoStars src={StarWhi || StarYel}/>
+                            <PhotoStars src={StarWhi || StarYel}/>
+                            <PhotoStars src={StarWhi || StarYel}/>
+                        </StarsCont>
+                    </Boxstars>
                     <FinButs>
                         <Boxbut>
                             <LastBut>cancelar</LastBut>
@@ -448,7 +473,7 @@ export default class Main extends React.Component {
             <Page>
                 <Header>
                     <ContainerMn>
-                        <MainText>CineFlix</MainText>
+                        <MainText>ToDoFlix</MainText>
                         <ContButtons ref={this.ContButtons}>
                             <Button onClick={this.handleButtonClick} color="#364859" width="7.2em" height="1.4em">
                                 categorias
