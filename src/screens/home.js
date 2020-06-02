@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input from '../components/Input';
+import Clacket from '../assets/Clacket.png';
 import StarWhi from '../assets/Star 1.png';
 import StarYel from '../assets/Star 2.png';
 
@@ -42,7 +43,28 @@ const ContButtons = styled.div`
     align-items: center;
 `;
 
-const Button = styled.button`
+const ButtonCat = styled.button`
+    width: 7.2em;
+    height: 1.4em;
+    border-radius: 0.1em;
+    border: 0;
+    font-size: 2em;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+    color: #364859;
+    background: #FFFFFF;
+
+    &:hover {
+        background: #C74350;
+        color: #FFFFFF;
+    }
+
+    @media(max-width: 768px) {
+        display: none;
+    }
+`;
+
+const ButtonAddFi = styled.button`
     width: 7.2em;
     height: 1.4em;
     border-radius: 0.1em;
@@ -70,7 +92,6 @@ const MainPage = styled.div`
 const ContainerPhoto = styled.div`
     width: 100%;
     height: 80vh;
-    background: #191a18;
 `;
 
 const MainPhoto = styled.div`
@@ -134,6 +155,10 @@ const ScoreTwo = styled.div`
     position: absolute;
     top: 22.5em;
     left: 21.6em;
+
+    @media(max-width: 768px) {
+        left: 12.6em;
+    }
 `;
 
 const EmptyContainer = styled.span`
@@ -146,6 +171,10 @@ const ContainerItems = styled.div`
     height: 100vh;
     display: flex;
     justify-content: space-around;
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const ContPhoto = styled.div`
@@ -433,7 +462,7 @@ export default class Main extends React.Component {
         <Overlay>
             <ContainerModal>
                 <ContainerClacket>
-                    <ClackPhoto src="https://lh3.googleusercontent.com/proxy/e2uz6fEr3NUXkPKDR_gTRuPSgIqwf4rEU0Sp5f_QAowP-IoHuACa-h3kmu2rENbwf7JnviNoi6bEwVCpOgwHC02u-aaeB7EJUFpBWDmBRwdBxgTo5g1n0GxqKCkgI31XOdcwNW3e57vvAku-JiJ23FbzMyZHLEDB-3J1aqB-rr639Q"/>
+                    <ClackPhoto src={Clacket}/>
                 </ContainerClacket>
                 <ContAddFilms>
                     <BoxTextButton>
@@ -475,7 +504,7 @@ export default class Main extends React.Component {
                     <ContainerMn>
                         <MainText>ToDoFlix</MainText>
                         <ContButtons ref={this.ContButtons}>
-                            <Button onClick={this.handleButtonClick} color="#364859" width="7.2em" height="1.4em">
+                            <ButtonCat onClick={this.handleButtonClick} color="#364859" width="7.2em" height="1.4em">
                                 categorias
                                 {this.state.menOpen && (
                                     <List>
@@ -483,8 +512,8 @@ export default class Main extends React.Component {
                                         <ListItem>Já vistos</ListItem>
                                     </List>
                                 )}
-                            </Button>
-                            <Button onClick={this.openModal} color="#364859" width="7.2em" height="1.4em">adicionar filme</Button>
+                            </ButtonCat>
+                            <ButtonAddFi onClick={this.openModal} color="#364859" width="7.2em" height="1.4em">adicionar filme</ButtonAddFi>
                         </ContButtons>
                     </ContainerMn>
                 </Header>
