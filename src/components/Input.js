@@ -7,6 +7,10 @@ const InputFrm = styled.input`
     border-radius: 0.25em;
     border: 0;
     background: #F4F6F8;
+
+    @media(max-width: 768px) {
+        width: 18.4rem;
+    }
 `;
 
 const Label = styled.label`

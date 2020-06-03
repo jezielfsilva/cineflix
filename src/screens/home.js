@@ -19,6 +19,10 @@ const Header = styled.header`
     display: flex;
     align-items: flex-end;
     justify-content: center;
+
+    @media(max-width: 768px) {
+        height: 14vh;
+    }
 `;
 
 const ContainerMn = styled.div`
@@ -27,12 +31,29 @@ const ContainerMn = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 768px) {
+        width: 84%;
+        height: 10vh;
+    }
+
+    @media(max-width: 425px) {
+        width: 80%;
+    }
 `;
 
 const MainText = styled.h1`
     font-size: 4.5em;
     letter-spacing: -0.015em;
     color: #C74350;
+
+    @media(max-width: 768px) {
+        font-size: 3.7em;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 2.8em;
+    }
 `;
 
 const ContButtons = styled.div`
@@ -41,6 +62,15 @@ const ContButtons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: 768px) {
+        width: 30%;
+        justify-content: center;
+    }
+
+    @media(max-width: 425px) {
+        width: 38%;
+    }
 `;
 
 const ButtonCat = styled.button`
@@ -79,11 +109,18 @@ const ButtonAddFi = styled.button`
         background: #C74350;
         color: #FFFFFF;
     }
+
+    @media(max-width: 768px) {
+        font-size: 1.7em;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 1.2em;
+    }
 `;
 
 const MainPage = styled.div`
     width: 100%;
-    min-height: 180vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -92,6 +129,16 @@ const MainPage = styled.div`
 const ContainerPhoto = styled.div`
     width: 100%;
     height: 80vh;
+
+    @media(max-width: 768px) {
+        height: 55.7vh;
+    }
+
+    @media(max-width: 425px) {
+        height: 33vh;
+        display: flex;
+        justify-content: center;
+    }
 `;
 
 const MainPhoto = styled.div`
@@ -99,6 +146,18 @@ const MainPhoto = styled.div`
     height: 35em;
     background-image: url('https://is5-ssl.mzstatic.com/image/thumb/Video124/v4/c6/fd/f6/c6fdf6e3-0e4d-c99b-e8c2-e52900fe9a11/1182643498-BR-AMP_SF.lsr/1200x630.jpg');
     background-size: cover;
+
+    @media(max-width: 768px) {
+        height: 27em;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    @media(max-width: 425px) {
+        width: 80%;
+        height: 12em;
+        border-radius: 0.2em;
+    }
 `;
 
 const ContainerFilms = styled.div`
@@ -107,6 +166,10 @@ const ContainerFilms = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media(max-width: 768px) {
+        height: 100vh;
+    }
 `;
 
 const TitleFilms = styled.h2`
@@ -118,11 +181,26 @@ const TitleFilms = styled.h2`
     align-items: center;
     width: 25%;
     height: 12%;
+
+    @media(max-width: 768px) {
+        font-size: 2.3em;
+        width: 32%;
+        height: 18%;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 1.8em;
+        width: 58%;
+    }
 `;
 
 const ContainerCategory = styled.div`
     width: 28vw;
     height: 98vh;
+
+    @media(max-width: 768px) {
+        height: 72vh;
+    }
 `;
 
 const Score = styled.div`
@@ -139,6 +217,14 @@ const Score = styled.div`
     position: absolute;
     top: 22.5em;
     left: 10em;
+
+    @media(max-width: 768px) {
+        font-size: 1.8em;
+        width: 7vw;
+        height: 7.4vh;
+        top: 22em;
+        left: 7.2em;
+    }
 `;
 
 const ScoreTwo = styled.div`
@@ -157,13 +243,25 @@ const ScoreTwo = styled.div`
     left: 21.6em;
 
     @media(max-width: 768px) {
-        left: 12.6em;
+        font-size: 1.8em;
+        width: 7vw;
+        height: 7.4vh;
+        top: 22em;
+        left: 16em;
+    }
+
+    @media(max-width: 425px) {
+        left: 13em;
     }
 `;
 
 const EmptyContainer = styled.span`
-    width: 30vw;
+    width: 28vw;
     height: 98vh;
+
+    @media(max-width: 768px) {
+        height: 72vh;
+    }
 `;
 
 const ContainerItems = styled.div`
@@ -172,8 +270,9 @@ const ContainerItems = styled.div`
     display: flex;
     justify-content: space-around;
 
-    @media(max-width: 768px) {
+    @media(max-width: 425px) {
         flex-direction: column;
+        align-items: center;
     }
 `;
 
@@ -182,6 +281,10 @@ const ContPhoto = styled.div`
     height: 66vh;
     background: #75A9A4;
     border-radius: 0.3125em;
+
+    @media(max-width: 768px) {
+        height: 34vh;
+    }
 `;
 
 const Photo = styled.div`
@@ -191,6 +294,10 @@ const Photo = styled.div`
     width: 28vw;
     height: 61vh;
     border-radius: 0.3125em 0.3125em 0 0;
+
+    @media(max-width: 768px) {
+        height: 30vh;
+    }
 `;
 
 const PhotoTwo = styled.div`
@@ -200,6 +307,10 @@ const PhotoTwo = styled.div`
     width: 28vw;
     height: 61vh;
     border-radius: 0.3125em 0.3125em 0 0;
+
+    @media(max-width: 768px) {
+        height: 30vh;
+    }
 `;
 
 const TextPhoto = styled.p`
@@ -210,6 +321,10 @@ const TextPhoto = styled.p`
     width: 27vw;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 768px) {
+        font-size: 1em;
+    }
 `;
 
 const TitlePhoto = styled.h2`
@@ -220,6 +335,10 @@ const TitlePhoto = styled.h2`
     height: 2.4em;
     display: flex;
     align-items: center;
+
+    @media(max-width: 768px) {
+        font-size: 1.2em;
+    }
 `;
 
 const TextCategory = styled.p`
@@ -228,6 +347,10 @@ const TextCategory = styled.p`
     color: #94A2AC;
     text-align: left;
     width: 24vw;
+
+    @media(max-width: 768px) {
+        width: 28vw;
+    }
 `;
 
 const TextCategoryTwo = styled.p`
@@ -236,6 +359,10 @@ const TextCategoryTwo = styled.p`
     color: #94A2AC;
     text-align: left;
     width: 18vw;
+
+    @media(max-width: 768px) {
+        width: 28vw;
+    }
 `;
 
 const List = styled.ul`
@@ -283,6 +410,11 @@ const ContainerModal = styled.div`
     min-height: 70vh;
     background: #FFFFFF;
     border-radius: 0.1em;
+
+    @media(max-width: 768px) {
+        width: 86%;
+        justify-content: center;
+    }
 `;
 
 const ContainerClacket = styled.div`
@@ -291,6 +423,10 @@ const ContainerClacket = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    @media(max-width: 768px) {
+        align-items: center;
+    }
 `;
 
 const ClackPhoto = styled.img`
@@ -306,7 +442,7 @@ const ContAddFilms = styled.div`
 `;
 
 const BoxTextButton = styled.div`
-    width: 100%;
+    width: 93%;
     height: 8vh;
     display: flex;
     align-items: flex-start;
@@ -318,6 +454,10 @@ const TextAddFilm = styled.p`
     letter-spacing: -0.015em;
     font-weight: 500;
     font-size: 1.6em;
+
+    @media(max-width: 768px) {
+        font-size: 1.3em;
+    }
 `;
 
 const ButClose = styled.button`
@@ -330,6 +470,11 @@ const ButClose = styled.button`
     font-weight: 600;
     border-radius: 0.1em;
     border: 0;
+
+    @media(max-width: 768px) {
+        width: 3vw;
+        height: 3vh;
+    }
 `;
 
 const InpBut = styled.div`
@@ -338,6 +483,12 @@ const InpBut = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @media(max-width: 768px) {
+        width: 93%;
+        height: 10.8vh;
+        flex-direction: column;
+    }
 `;
 
 const ButAddimg = styled.button`
@@ -350,6 +501,11 @@ const ButAddimg = styled.button`
     font-size: 0.75em;
     font-weight: 600;
     letter-spacing: -0.015em;
+
+    @media(max-width: 768px) {
+        width: 15vw;
+        height: 3.8vh;
+    }
 `;
 
 const TextNote = styled.p`
@@ -372,6 +528,10 @@ const StarsCont = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
+
+    @media(max-width: 768px) {
+        width: 70%;
+    }
 `;
 
 const PhotoStars = styled.img`
@@ -385,6 +545,10 @@ const FinButs = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+
+    @media(min-width: 768px) {
+        width: 93%;
+    }
 `;
 
 const Boxbut = styled.div`
@@ -393,6 +557,10 @@ const Boxbut = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media(max-width: 768px) {
+        width: 23vw;
+    }
 `;
 
 const LastBut = styled.button`
@@ -403,13 +571,17 @@ const LastBut = styled.button`
     font-size: 0.8em;
     font-weight: 600;
     letter-spacing: -0.015em;
-    line-height: 1.5em;
     color: #364859;
     background: #FFFFFF;
 
     &:hover {
         background: #75A9A4;
         color: #FFFFFF;
+    }
+
+    @media(max-width: 768px) {
+        width: 6.7em;
+        height: 2.3em;
     }
 `;
 
