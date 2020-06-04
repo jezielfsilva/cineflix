@@ -486,6 +486,10 @@ const ContainerModal = styled.div`
         width: 86%;
         justify-content: center;
     }
+
+    @media(max-width: 425px) {
+        min-height: 84vh;
+    }
 `;
 
 const ContainerClacket = styled.div`
@@ -497,6 +501,10 @@ const ContainerClacket = styled.div`
 
     @media(max-width: 768px) {
         align-items: center;
+    }
+
+    @media(max-width: 425px) {
+        display: none;
     }
 `;
 
@@ -510,6 +518,11 @@ const ContAddFilms = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media(max-width: 425px) {
+        width: 92%;
+        height: 76vh;
+    }
 `;
 
 const BoxTextButton = styled.div`
@@ -518,6 +531,10 @@ const BoxTextButton = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media(min-width: 425px) {
+        width: 100%;
+    }
 `;
 
 const TextAddFilm = styled.p`
@@ -546,6 +563,12 @@ const ButClose = styled.button`
         width: 3vw;
         height: 3vh;
     }
+
+    @media(max-width: 425px) {
+        width: 5vw;
+        height: 4vh;
+        font-size: 1.6em;
+    }
 `;
 
 const InpBut = styled.div`
@@ -559,6 +582,11 @@ const InpBut = styled.div`
         width: 93%;
         height: 10.8vh;
         flex-direction: column;
+    }
+
+    @media(max-width: 425px) {
+        width: 100%;
+        height: 14.2vh;
     }
 `;
 
@@ -577,6 +605,12 @@ const ButAddimg = styled.button`
         width: 15vw;
         height: 3.8vh;
     }
+
+    @media(max-width: 425px) {
+        width: 79vw;
+        height: 5vh;
+        font-size: 0.9em;
+    }
 `;
 
 const TextNote = styled.p`
@@ -591,6 +625,10 @@ const Boxstars = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+
+    @media(max-width: 425px) {
+        height: 7vh;
+    }
 `;
 
 const StarsCont = styled.div`
@@ -620,6 +658,10 @@ const FinButs = styled.div`
     @media(min-width: 768px) {
         width: 93%;
     }
+
+    @media(min-width: 425px) {
+        height: 12vh;
+    }
 `;
 
 const Boxbut = styled.div`
@@ -631,6 +673,12 @@ const Boxbut = styled.div`
 
     @media(max-width: 768px) {
         width: 23vw;
+    }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        height: 11vh;
+        flex-direction: column;
     }
 `;
 
@@ -653,6 +701,10 @@ const LastBut = styled.button`
     @media(max-width: 768px) {
         width: 6.7em;
         height: 2.3em;
+    }
+
+    @media(max-width: 425px) {
+        width: 26.26em;
     }
 `;
 

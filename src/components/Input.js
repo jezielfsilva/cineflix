@@ -11,6 +11,10 @@ const InputFrm = styled.input`
     @media(max-width: 768px) {
         width: 18.4rem;
     }
+
+    @media(max-width: 425px) {
+        width: 21.01rem;
+    }
 `;
 
 const Label = styled.label`
