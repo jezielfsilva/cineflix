@@ -11,6 +11,10 @@ const Page = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media(max-width: 425px) {
+        height: 226vh;
+    }
 `;
 
 const Header = styled.header`
@@ -124,6 +128,10 @@ const MainPage = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media(max-width: 425px) {
+        height: 209vh;
+    }
 `;
 
 const ContainerPhoto = styled.div`
@@ -170,6 +178,10 @@ const ContainerFilms = styled.div`
     @media(max-width: 768px) {
         height: 100vh;
     }
+
+    @media(max-width: 425px) {
+        height: 174vh;
+    }
 `;
 
 const TitleFilms = styled.h2`
@@ -191,6 +203,7 @@ const TitleFilms = styled.h2`
     @media(max-width: 425px) {
         font-size: 1.8em;
         width: 58%;
+        height: 6%;
     }
 `;
 
@@ -200,6 +213,11 @@ const ContainerCategory = styled.div`
 
     @media(max-width: 768px) {
         height: 72vh;
+    }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        height: 74vh;
     }
 `;
 
@@ -224,6 +242,14 @@ const Score = styled.div`
         height: 7.4vh;
         top: 22em;
         left: 7.2em;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 1.5em;
+        width: 11vw;
+        height: 8.4vh;
+        top: 15.8em;
+        left: 14.5em;
     }
 `;
 
@@ -251,7 +277,11 @@ const ScoreTwo = styled.div`
     }
 
     @media(max-width: 425px) {
-        left: 13em;
+        font-size: 1.5em;
+        width: 11vw;
+        height: 8.4vh;
+        top: 35.2em;
+        left: 14.5em;
     }
 `;
 
@@ -262,6 +292,10 @@ const EmptyContainer = styled.span`
     @media(max-width: 768px) {
         height: 72vh;
     }
+
+    @media(max-width: 425px) {
+        display: none;
+    }
 `;
 
 const ContainerItems = styled.div`
@@ -271,6 +305,7 @@ const ContainerItems = styled.div`
     justify-content: space-around;
 
     @media(max-width: 425px) {
+        height: 160vh;
         flex-direction: column;
         align-items: center;
     }
@@ -285,6 +320,11 @@ const ContPhoto = styled.div`
     @media(max-width: 768px) {
         height: 34vh;
     }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        height: 44vh;
+    }
 `;
 
 const Photo = styled.div`
@@ -298,6 +338,12 @@ const Photo = styled.div`
     @media(max-width: 768px) {
         height: 30vh;
     }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        height: 39.4vh;
+        background-position: 50% 40%;
+    }
 `;
 
 const PhotoTwo = styled.div`
@@ -310,6 +356,12 @@ const PhotoTwo = styled.div`
 
     @media(max-width: 768px) {
         height: 30vh;
+    }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        height: 39.4vh;
+        background-position: 50% 50%;
     }
 `;
 
@@ -325,6 +377,10 @@ const TextPhoto = styled.p`
     @media(max-width: 768px) {
         font-size: 1em;
     }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+    }
 `;
 
 const TitlePhoto = styled.h2`
@@ -339,6 +395,11 @@ const TitlePhoto = styled.h2`
     @media(max-width: 768px) {
         font-size: 1.2em;
     }
+
+    @media(max-width: 425px) {
+        font-size: 1.4em;
+        height: 2.8em;
+    }
 `;
 
 const TextCategory = styled.p`
@@ -351,6 +412,11 @@ const TextCategory = styled.p`
     @media(max-width: 768px) {
         width: 28vw;
     }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        font-size: 1em;
+    }
 `;
 
 const TextCategoryTwo = styled.p`
@@ -362,6 +428,11 @@ const TextCategoryTwo = styled.p`
 
     @media(max-width: 768px) {
         width: 28vw;
+    }
+
+    @media(max-width: 425px) {
+        width: 80vw;
+        font-size: 0.98em;
     }
 `;
 
