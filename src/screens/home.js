@@ -124,6 +124,29 @@ const ButtonAddFi = styled.button`
 
     @media(max-width: 425px) {
         font-size: 1.2em;
+        display: none;
+    }
+`;
+
+const ButtonAddFi2 = styled.button`
+    width: 5.1em;
+    height: 1.4em;
+    display: none;
+    border-radius: 0.1em;
+    border: 0;
+    font-size: 1.2em;
+    letter-spacing: -0.015em;
+    line-height: 1.5em;
+    color: #364859;
+    background: #FFFFFF;
+
+    &:hover {
+        background: #C74350;
+        color: #FFFFFF;
+    }
+
+    @media(max-width: 425px) {
+        display: block;
     }
 `;
 
@@ -889,7 +912,7 @@ export default class Main extends React.Component {
                     <ContainerMn>
                         <MainText>ToDoFlix</MainText>
                         <ContButtons ref={this.ContButtons}>
-                            <ButtonCat onClick={this.handleButtonClick} color="#364859" width="7.2em" height="1.4em">
+                            <ButtonCat onClick={this.handleButtonClick}>
                                 categorias
                                 {this.state.menOpen && (
                                     <List>
@@ -898,7 +921,8 @@ export default class Main extends React.Component {
                                     </List>
                                 )}
                             </ButtonCat>
-                            <ButtonAddFi onClick={this.openModal} color="#364859" width="7.2em" height="1.4em">adicionar filme</ButtonAddFi>
+                            <ButtonAddFi onClick={this.openModal}>adicionar filme</ButtonAddFi>
+                            <ButtonAddFi2 onClick={this.openModal}>add filme</ButtonAddFi2>
                         </ContButtons>
                     </ContainerMn>
                 </Header>
