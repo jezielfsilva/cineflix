@@ -15,6 +15,10 @@ const Page = styled.div`
     @media(max-width: 425px) {
         height: 226vh;
     }
+
+    @media(max-width: 320px) {
+        height: 205vh;
+    }
 `;
 
 const Header = styled.header`
@@ -56,7 +60,7 @@ const MainText = styled.h1`
     }
 
     @media(max-width: 425px) {
-        font-size: 2.8em;
+        font-size: 2.3em;
     }
 `;
 
@@ -132,6 +136,10 @@ const MainPage = styled.div`
     @media(max-width: 425px) {
         height: 209vh;
     }
+
+    @media(max-width: 320px) {
+        height: 188vh;
+    }
 `;
 
 const ContainerPhoto = styled.div`
@@ -146,6 +154,10 @@ const ContainerPhoto = styled.div`
         height: 33vh;
         display: flex;
         justify-content: center;
+    }
+
+    @media(max-width: 375px) {
+        height: 20vh;
     }
 `;
 
@@ -166,6 +178,10 @@ const MainPhoto = styled.div`
         height: 12em;
         border-radius: 0.2em;
     }
+
+    @media(max-width: 375px) {
+        height: 11em;
+    }
 `;
 
 const ContainerFilms = styled.div`
@@ -181,6 +197,14 @@ const ContainerFilms = styled.div`
 
     @media(max-width: 425px) {
         height: 174vh;
+    }
+
+    @media(max-width: 375px) {
+        height: 180vh;
+    }
+
+    @media(max-width: 320px) {
+        height: 160vh;
     }
 `;
 
@@ -204,6 +228,15 @@ const TitleFilms = styled.h2`
         font-size: 1.8em;
         width: 58%;
         height: 6%;
+    }
+
+    @media(max-width: 375px) {
+        height: 3%;
+    }
+
+    @media(max-width: 320px) {
+        height: 6%;
+        font-size: 1.5em;
     }
 `;
 
@@ -251,6 +284,18 @@ const Score = styled.div`
         top: 15.8em;
         left: 14.5em;
     }
+
+    @media(max-width: 375px) {
+        width: 12vw;
+        top: 14.5em;
+        left: 12.8em;
+    }
+
+    @media(max-width: 320px) {
+        width: 14vw;
+        top: 13em;
+        left: 10.7em;
+    }
 `;
 
 const ScoreTwo = styled.div`
@@ -283,6 +328,18 @@ const ScoreTwo = styled.div`
         top: 35.2em;
         left: 14.5em;
     }
+
+    @media(max-width: 375px) {
+        width: 12vw;
+        top: 33.9em;
+        left: 12.8em;
+    }
+
+    @media(max-width: 320px) {
+        width: 14vw;
+        top: 31.1em;
+        left: 10.7em;
+    }
 `;
 
 const EmptyContainer = styled.span`
@@ -308,6 +365,10 @@ const ContainerItems = styled.div`
         height: 160vh;
         flex-direction: column;
         align-items: center;
+    }
+
+    @media(max-width: 320px) {
+        height: 150vh;
     }
 `;
 
@@ -417,6 +478,14 @@ const TextCategory = styled.p`
         width: 80vw;
         font-size: 1em;
     }
+
+    @media(max-width: 375px) {
+        font-size: 0.85em;
+    }
+
+    @media(max-width: 320px) {
+        font-size: 0.73em;
+    }
 `;
 
 const TextCategoryTwo = styled.p`
@@ -433,6 +502,14 @@ const TextCategoryTwo = styled.p`
     @media(max-width: 425px) {
         width: 80vw;
         font-size: 0.98em;
+    }
+
+    @media(max-width: 375px) {
+        font-size: 0.87em;
+    }
+
+    @media(max-width: 320px) {
+        font-size: 0.75em;
     }
 `;
 
@@ -532,7 +609,7 @@ const BoxTextButton = styled.div`
     align-items: flex-start;
     justify-content: space-between;
 
-    @media(min-width: 425px) {
+    @media(max-width: 425px) {
         width: 100%;
     }
 `;
@@ -655,11 +732,12 @@ const FinButs = styled.div`
     align-items: flex-end;
     justify-content: flex-end;
 
-    @media(min-width: 768px) {
+    @media(max-width: 768px) {
         width: 93%;
     }
 
-    @media(min-width: 425px) {
+    @media(max-width: 425px) {
+        width: 100%;
         height: 12vh;
     }
 `;
@@ -679,6 +757,10 @@ const Boxbut = styled.div`
         width: 80vw;
         height: 11vh;
         flex-direction: column;
+    }
+
+    @media(max-width: 320px) {
+        width: 79vw;
     }
 `;
 
@@ -705,6 +787,14 @@ const LastBut = styled.button`
 
     @media(max-width: 425px) {
         width: 26.26em;
+    }
+
+    @media(max-width: 375px) {
+        width: 23.2em;
+    }
+
+    @media(max-width: 320px) {
+        width: 19.7em;
     }
 `;
 

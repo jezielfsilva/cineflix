@@ -15,6 +15,14 @@ const InputFrm = styled.input`
     @media(max-width: 425px) {
         width: 21.01rem;
     }
+
+    @media(max-width: 375px) {
+        width: 18.5rem;
+    }
+
+    @media(max-width: 320px) {
+        width: 15.82rem;
+    }
 `;
 
 const Label = styled.label`
