@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input from '../components/Input';
+import CFantast from '../assets/capitãofantastico.png';
+import Run from '../assets/corra.jpeg';
 import Clacket from '../assets/Clacket.png';
 import StarWhi from '../assets/Star 1.png';
 import StarYel from '../assets/Star 2.png';
@@ -231,7 +233,119 @@ const ContainerFilms = styled.div`
     }
 `;
 
+const ContainerFilmsTwo = styled.div`
+    width: 100%;
+    height: 135vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media(max-width: 768px) {
+        height: 100vh;
+    }
+
+    @media(max-width: 425px) {
+        height: 174vh;
+    }
+
+    @media(max-width: 375px) {
+        height: 180vh;
+    }
+
+    @media(max-width: 320px) {
+        height: 160vh;
+    }
+`;
+
+const ContainerFilmsTree = styled.div`
+    width: 100%;
+    height: 135vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media(max-width: 768px) {
+        height: 100vh;
+    }
+
+    @media(max-width: 425px) {
+        height: 174vh;
+    }
+
+    @media(max-width: 375px) {
+        height: 180vh;
+    }
+
+    @media(max-width: 320px) {
+        height: 160vh;
+    }
+`;
+
 const TitleFilms = styled.h2`
+    font-size: 2.7em;
+    letter-spacing: -0.015em;
+    color: #364859;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 12%;
+
+    @media(max-width: 768px) {
+        font-size: 2.3em;
+        width: 32%;
+        height: 18%;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 1.8em;
+        width: 58%;
+        height: 6%;
+    }
+
+    @media(max-width: 375px) {
+        height: 3%;
+    }
+
+    @media(max-width: 320px) {
+        height: 6%;
+        font-size: 1.5em;
+    }
+`;
+
+const TitleFilmsTwo = styled.h2`
+    font-size: 2.7em;
+    letter-spacing: -0.015em;
+    color: #364859;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 12%;
+
+    @media(max-width: 768px) {
+        font-size: 2.3em;
+        width: 32%;
+        height: 18%;
+    }
+
+    @media(max-width: 425px) {
+        font-size: 1.8em;
+        width: 58%;
+        height: 6%;
+    }
+
+    @media(max-width: 375px) {
+        height: 3%;
+    }
+
+    @media(max-width: 320px) {
+        height: 6%;
+        font-size: 1.5em;
+    }
+`;
+
+const TitleFilmsTree = styled.h2`
     font-size: 2.7em;
     letter-spacing: -0.015em;
     color: #364859;
@@ -365,19 +479,6 @@ const ScoreTwo = styled.div`
     }
 `;
 
-const EmptyContainer = styled.span`
-    width: 28vw;
-    height: 98vh;
-
-    @media(max-width: 768px) {
-        height: 72vh;
-    }
-
-    @media(max-width: 425px) {
-        display: none;
-    }
-`;
-
 const ContainerItems = styled.div`
     width: 100%;
     height: 100vh;
@@ -412,7 +513,7 @@ const ContPhoto = styled.div`
 `;
 
 const Photo = styled.div`
-    background-image: url('https://s3-alpha-sig.figma.com/img/3203/a0b8/18c1ab8beddbc96e7fe84f1b50d7426e?Expires=1591574400&Signature=K3b8azWXBcHleJHlpZtWWgEGne8v1pvba0KKsTE3ucQngU23YD3NMtQqTOVNwg5pxNkVQ63FePv1DDL8fYgA7VkJSb5nKU3wOM15EosGG6Ioi8wD3hCzif33ID724-IvtumYTL5ecTrA~pDA4lVEZrBTnxAeQlMQXj-0zSThpF33rLcVs0my6D9uBGjJu19x4vnzqfxMRoBcWf34P3bl18GA2vMWl4YdpAxG-iZYp0D9RMRwtnIFHGaGy3PnEno1vWPzGj3Ra3hn-JZpsL~Pr~tNqvAjhtyNtrTt6ky8AnEWisTXF3VAqeE8qH3y3x7B2J32PZAcJPlpi5dq~~a7dw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
+    background-image: url(${CFantast});
     background-size: cover;
     background-position: 50% 75%;
     width: 28vw;
@@ -431,7 +532,7 @@ const Photo = styled.div`
 `;
 
 const PhotoTwo = styled.div`
-    background-image: url('https://s3-alpha-sig.figma.com/img/97d8/7bb5/27e5ca380ae489f3c954bde1bc007e8c?Expires=1591574400&Signature=Z2UUqan0~Eg8g8xMhmsTHxdiGtXH1QlFWymtXaO2~X5SoAIa0P0JHHkkKlJieDLFiKgF536IqSthlX1OsfQ6y9ucWE1Gu1X8hgoAS3PYfTU5SAn9vYessvIqp26Rn56llmduD~NTgQBYMinLBEUA-29hGiWeI94fc4yOptMs-PtddbHtTsmZIO61rvSST~9E0BQ3lNLdpCcvIxBe25noDFFmOYRwgc4Zw2pmCFietT6E5gl9V1CwDhOVdM2U4Mcict-pduag89eRlD6AkR6gzAlLcGnQ8kBKf63Sf2U4so-9vLuShYcyttWYhSioIqVCWgX2sN-2Ef34P1yvFHx-og__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
+    background-image: url(${Run});
     background-size: cover;
     background-position: 50% 64%;
     width: 28vw;
@@ -576,7 +677,7 @@ const Overlay = styled.div`
 const ContainerModal = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 60%;
     min-height: 70vh;
     background: #FFFFFF;
@@ -593,7 +694,7 @@ const ContainerModal = styled.div`
 `;
 
 const ContainerClacket = styled.div`
-    width: 48%;
+    width: 44%;
     height: 65vh;
     display: flex;
     justify-content: center;
@@ -626,11 +727,15 @@ const ContAddFilms = styled.div`
 `;
 
 const BoxTextButton = styled.div`
-    width: 93%;
+    width: 100%;
     height: 8vh;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media(max-width: 768px) {
+        width: 93%;
+    }
 
     @media(max-width: 425px) {
         width: 100%;
@@ -827,7 +932,7 @@ export default class Main extends React.Component {
             super(props)
             this.state = {
                 menOpen: false,
-                modOpen: false, 
+                modOpen: false,
             }
         }
 
@@ -952,9 +1057,25 @@ export default class Main extends React.Component {
                                 <TitlePhoto>Corra!</TitlePhoto>
                                 <TextCategoryTwo>Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.</TextCategoryTwo>
                             </ContainerCategory>
-                            <EmptyContainer></EmptyContainer>
+                            <ContainerCategory></ContainerCategory>
                         </ContainerItems>
                     </ContainerFilms>
+                    <ContainerFilmsTwo>
+                        <TitleFilmsTwo>Quero ver:</TitleFilmsTwo>
+                        <ContainerItems>
+                            <ContainerCategory></ContainerCategory>
+                            <ContainerCategory></ContainerCategory>
+                            <ContainerCategory></ContainerCategory>
+                        </ContainerItems>
+                    </ContainerFilmsTwo>
+                    <ContainerFilmsTree>
+                        <TitleFilmsTree>Já vistos:</TitleFilmsTree>
+                        <ContainerItems>
+                            <ContainerCategory></ContainerCategory>
+                            <ContainerCategory></ContainerCategory>
+                            <ContainerCategory></ContainerCategory>
+                        </ContainerItems>
+                    </ContainerFilmsTree>
                 </MainPage>
                 {this.state.modOpen ? this.renderModal() : null}
             </Page>
