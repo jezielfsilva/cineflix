@@ -648,7 +648,7 @@ const List = styled.ul`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0.1em;
     width: 7.2em;
-    height: 3.08em;
+    height: 4.58em;
     display: inline-block;
 `;
 
@@ -661,6 +661,11 @@ const ListItem = styled.li`
         background: #ECECEC;
         font-weight: 900;
     }
+`;
+
+const Anchor = styled.a`
+    color: #364859;
+    text-decoration: none;
 `;
 
 const Overlay = styled.div`
@@ -742,6 +747,10 @@ const BoxTextButton = styled.div`
     }
 `;
 
+const Form = styled.form`
+    width: 100%;
+`;
+
 const TextAddFilm = styled.p`
     color: #364859;
     letter-spacing: -0.015em;
@@ -792,6 +801,14 @@ const InpBut = styled.div`
     @media(max-width: 425px) {
         width: 100%;
         height: 14.2vh;
+    }
+`;
+
+const FormTwo = styled.form`
+    width: 61%;
+
+    @media(max-width: 768px) {
+        width: 100%;
     }
 `;
 
@@ -933,6 +950,123 @@ export default class Main extends React.Component {
             this.state = {
                 menOpen: false,
                 modOpen: false,
+                divs: [
+                    'ContainerFilms',
+                    'ContainerFilmsTwo',
+                    'ContainerFilmsTree',
+                ],
+
+                selecionada: 'ContainerFilms',
+            }
+        }
+
+        renderizarDiv = () => {
+            switch (this.state.selecionada) {
+                case 'ContainerFilms':
+                    return (
+                        <ContainerFilms id="Lista">
+                            <TitleFilms>Minha lista:</TitleFilms>
+                            <ContainerItems>
+                                <ContainerCategory>
+                                    <Score>5.0</Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto>quero ver</TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto>Capitão Fantástico</TitlePhoto>
+                                    <TextCategory>Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.</TextCategory>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <ScoreTwo>2.0</ScoreTwo>
+                                    <ContPhoto>
+                                        <PhotoTwo></PhotoTwo>
+                                        <TextPhoto>quero ver</TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto>Corra!</TitlePhoto>
+                                    <TextCategoryTwo>Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.</TextCategoryTwo>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                            </ContainerItems>
+                        </ContainerFilms>
+                    );
+                case 'ContainerFilmsTwo':
+                    return (
+                        <ContainerFilmsTwo id="Ver">
+                            <TitleFilmsTwo>Quero ver:</TitleFilmsTwo>
+                            <ContainerItems>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                            </ContainerItems>
+                        </ContainerFilmsTwo>
+                    );
+                case 'ContainerFilmsTree':
+                    return (
+                        <ContainerFilmsTree id="Vistos">
+                            <TitleFilmsTree>Já vistos:</TitleFilmsTree>
+                            <ContainerItems>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                                <ContainerCategory>
+                                    <Score></Score>
+                                    <ContPhoto>
+                                        <Photo></Photo>
+                                        <TextPhoto></TextPhoto>
+                                    </ContPhoto>
+                                    <TitlePhoto></TitlePhoto>
+                                    <TextCategory></TextCategory>
+                                </ContainerCategory>
+                            </ContainerItems>
+                        </ContainerFilmsTree>
+                    );
             }
         }
 
@@ -982,11 +1116,15 @@ export default class Main extends React.Component {
                         <TextAddFilm>Adicionar novo filme:</TextAddFilm>
                         <ButClose onClick={() => this.setState({modOpen: false})}>X</ButClose>
                     </BoxTextButton>
-                    <Input type="text" labelText="Nome:" width="23rem"/>
-                    <Input type="text" labelText="Descrição:" width="23rem"/>
-                    <Input type="text" labelText="Status:" width="23rem"/>
+                    <Form>
+                        <Input type="text" labelText="Nome:" width="23rem"/>
+                        <Input type="text" labelText="Descrição:" width="23rem"/>
+                        <Input type="text" labelText="Status:" width="23rem"/>
+                    </Form>
                     <InpBut>
-                        <Input type="text" labelText="Imagem de exibição:" width="14rem"/>
+                        <FormTwo>
+                            <Input type="text" labelText="Imagem de exibição:" width="14rem"/>
+                        </FormTwo>
                         <ButAddimg>adicionar imagem</ButAddimg>
                     </InpBut>
                     <TextNote>Nota:</TextNote>
@@ -1021,8 +1159,9 @@ export default class Main extends React.Component {
                                 categorias
                                 {this.state.menOpen && (
                                     <List>
-                                        <ListItem>Quero ver</ListItem>
-                                        <ListItem>Já vistos</ListItem>
+                                        <ListItem onClick={() => this.setState({selecionada: 'ContainerFilmsTwo'})}><Anchor href="#Ver">Quero ver</Anchor></ListItem>
+                                        <ListItem onClick={() => this.setState({selecionada: 'ContainerFilmsTree'})}><Anchor href="#Vistos">Já vistos</Anchor></ListItem>
+                                        <ListItem onClick={() => this.setState({selecionada: 'ContainerFilms'})}><Anchor href="#Lista">Minha lista</Anchor></ListItem>
                                     </List>
                                 )}
                             </ButtonCat>
@@ -1036,46 +1175,7 @@ export default class Main extends React.Component {
                         <MainPhoto>
                         </MainPhoto>
                     </ContainerPhoto>
-                    <ContainerFilms>
-                        <TitleFilms>Minha lista:</TitleFilms>
-                        <ContainerItems>
-                            <ContainerCategory>
-                                <Score>5.0</Score>
-                                <ContPhoto>
-                                    <Photo></Photo>
-                                    <TextPhoto>quero ver</TextPhoto>
-                                </ContPhoto>
-                                <TitlePhoto>Capitão Fantástico</TitlePhoto>
-                                <TextCategory>Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.</TextCategory>
-                            </ContainerCategory>
-                            <ContainerCategory>
-                                <ScoreTwo>2.0</ScoreTwo>
-                                <ContPhoto>
-                                    <PhotoTwo></PhotoTwo>
-                                    <TextPhoto>quero ver</TextPhoto>
-                                </ContPhoto>
-                                <TitlePhoto>Corra!</TitlePhoto>
-                                <TextCategoryTwo>Um jovem fotógrafo descobre um segredo sombrio quando conhece os pais aparentemente amigáveis da sua namorada.</TextCategoryTwo>
-                            </ContainerCategory>
-                            <ContainerCategory></ContainerCategory>
-                        </ContainerItems>
-                    </ContainerFilms>
-                    <ContainerFilmsTwo>
-                        <TitleFilmsTwo>Quero ver:</TitleFilmsTwo>
-                        <ContainerItems>
-                            <ContainerCategory></ContainerCategory>
-                            <ContainerCategory></ContainerCategory>
-                            <ContainerCategory></ContainerCategory>
-                        </ContainerItems>
-                    </ContainerFilmsTwo>
-                    <ContainerFilmsTree>
-                        <TitleFilmsTree>Já vistos:</TitleFilmsTree>
-                        <ContainerItems>
-                            <ContainerCategory></ContainerCategory>
-                            <ContainerCategory></ContainerCategory>
-                            <ContainerCategory></ContainerCategory>
-                        </ContainerItems>
-                    </ContainerFilmsTree>
+                    {this.renderizarDiv()}
                 </MainPage>
                 {this.state.modOpen ? this.renderModal() : null}
             </Page>
