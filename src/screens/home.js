@@ -957,6 +957,14 @@ export default class Main extends React.Component {
                 ],
 
                 selecionada: 'ContainerFilms',
+                addFilm: [
+                    {
+                        title: '',
+                        text: '',
+                        text: '',
+                        img: '',
+                    }
+                ],
             }
         }
 
